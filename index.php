@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SYIFA'</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<script src="script.js"></script>
+<body>
+
+<canvas id="bg-blobs"></canvas>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">SYIFA'</div>
+
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skill</a></li>
+    <li><a href="#achievement">Achievement</a></li>
+    <li><a href="#picture">Picture</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <img src="assets/gw.jpeg" class="profile">
+
+  <h1>
+    HI, I'M <span>SYIFA'</span>
+  </h1>
+
+  <h2 class="typing"></h2>
+
+  <p>
+    Jujur gatau mau diisi apa.
+  </p>
+
+<div class="buttons">
+  <a href="#contact" class="outline-btn">
+    Hubungi Saya
+  </a>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+  <div class="title">
+    <h1>About Me</h1>
+  </div>
+
+  <div class="about-container">
+
+    <div class="card">
+      <h2>Information</h2>
+
+      <p><b>Name:</b> Syifa' Meriasa Putri Wijaya</p>
+      <p><b>Major:</b> Network Computer Engineering</p>
+      <p><b>Address:</b> Nganjuk</p>
+      <p><b>Email:</b> syifa.meriasa44@smk.belajar.id</p>
+    </div>
+
+    <div class="card">
+      <h2>Description</h2>
+      <p>
+          A 17-year-old girl trying to build her own portfolio website. She studies at SMeKTa in Tanjunganom, Nganjuk, East Java. She enjoys playing MOBA games as well as open-world games like <b>Sky: Children of the Light.</b>
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+
+  <div class="title">
+    <h1>My Skills in Something</h1>
+  </div>
+
+  <div class="skill-box">
+
+<div class="skill">
+  <div class="skill-top">
+    <span>Mobile Legend</span>
+    <span>95%</span>
+  </div>
+
+  <div class="bar">
+    <div class="fill" style="width:95%"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <span>Honor Of King</span>
+    <span>70%</span>
+  </div>
+
+  <div class="bar">
+    <div class="fill" style="width:70%"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <span>Sky: Children of the Light</span>
+    <span>85%</span>
+  </div>
+
+  <div class="bar">
+    <div class="fill" style="width:85%"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <span>Networking Engineer</span>
+    <span>45%</span>
+  </div>
+
+  <div class="bar">
+    <div class="fill" style="width:45%"></div>
+  </div>
+</div>
+
+</section>
+
+<!-- ACHIEVEMENT -->
+<section class="achievement" id="achievement">
+
+  <div class="title">
+    <h1>Achievement</h1>
+  </div>
+
+  <div class="achievement-container">
+
+    <div class="achievement-card">
+      <h1>01</h1>
+      <p>Juara Kelas, mungkin?</p>
+    </div>
+
+    <div class="achievement-card">
+      <h1>02</h1>
+      <p>Crimping Cable</p>
+    </div>
+
+    <div class="achievement-card">
+      <h1>03</h1>
+      <p>Menggunakan LinuxOS</p>
+    </div>
+
+    <div class="achievement-card">
+      <h1>04</h1>
+      <p>English Debate NSDC</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECT -->
+<section class="picture" id="picture">
+
+  <div class="title">
+    <h1>Picture</h1>
+  </div>
+
+<div class="picture-container">
+
+  <!-- GAME -->
+  <a href="game.php" class="picture-card">
+
+    <img src="assets/game/sky1.jpeg">
+
+    <div class="picture-content">
+      <h2>Game Moment</h2>
+
+      <p>
+        Mobile Legends, Sky: Children Of The Light,
+        dan berbagai moment gameplay lainnya.
+      </p>
+    </div>
+
+  </a>
+
+  <!-- REAL LIFE -->
+  <a href="reallife.php" class="picture-card">
+
+    <!--img disini-->
+
+    <div class="picture-content">
+      <h2>Real Life</h2>
+          <p>Nothing Here</p>
+      <!-- <p>
+        Dokumentasi sekolah, teman,
+        kegiatan, dan kehidupan sehari-hari.
+      </p> -->
+    </div>
+
+  </a>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+  <div class="title">
+    <h1>Contact Me</h1>
+  </div>
+
+  <div class="socials">
+
+    <a href="https://www.instagram.com/amewri4x?igsh=NjY0dWZia2Q1bGZk">Instagram</a>
+    <a href="https://github.com/iyasamiaw-hash/">GitHub</a>
+    <a href="https://www.tiktok.com/@ssalodieo">TikTok</a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  ©2026 Syifa
+</footer>
+
+</body>
+</html>
