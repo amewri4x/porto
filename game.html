@@ -8,25 +8,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<div id="lightbox" onclick="closeImage()">
+<body>
 
-  <span class="close-btn">&times;</span>
-
-  <img id="lightbox-img">
-
-</div>
-
-<script src="script.js"></script>
+<!-- BACKGROUND -->
+<canvas id="bg-blobs"></canvas>
 
 <!-- LOADER -->
 <div id="loader">
   <div class="spinner"></div>
 </div>
 
-<body>
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImage()">
+  <span class="close-btn">&times;</span>
+  <img id="lightbox-img">
+</div>
 
-<canvas id="bg-blobs"></canvas>
-
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">SYIFA'</div>
 
@@ -35,49 +33,39 @@
   </ul>
 </nav>
 
+<!-- CONTENT -->
 <section class="page">
 
-    <h1 class="title">Game Moment</h1>
+  <h1 class="title">Game Moment</h1>
 
-    <div class="gallery">
+  <div class="gallery">
 
     <div class="gallery-item">
-        <img
-            src="assets/game/sky3.jpeg"
-            onclick="openImage(this.src)"
-        >
+      <img src="assets/game/sky3.jpeg" onclick="openImage(this.src)">
     </div>
 
     <div class="gallery-item">
-        <img
-            src="assets/game/sky1.jpeg"
-            onclick="openImage(this.src)"
-        >
+      <img src="assets/game/sky1.jpeg" onclick="openImage(this.src)">
     </div>
 
     <div class="gallery-item">
-        <img
-            src="assets/game/sky2.jpeg"
-            onclick="openImage(this.src)"
-        >
+      <img src="assets/game/sky2.jpeg" onclick="openImage(this.src)">
     </div>
 
     <div class="gallery-item">
-        <img
-            src="assets/game/sky4.jpeg"
-            onclick="openImage(this.src)"
-        >
+      <img src="assets/game/sky4.jpeg" onclick="openImage(this.src)">
     </div>
 
     <div class="gallery-item">
-        <img
-            src="assets/game/sky5.jpeg"
-            onclick="openImage(this.src)"
-        >
+      <img src="assets/game/sky5.jpeg" onclick="openImage(this.src)">
     </div>
 
-    </div>
+  </div>
+
 </section>
+
+<!-- SCRIPT HARUS DI PALING BAWAH -->
+<script src="script.js"></script>
 
 </body>
 </html>
