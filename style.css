@@ -559,6 +559,193 @@ footer{
 
 }
 
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  /* NAVBAR */
+
+  .navbar{
+    padding:16px 5%;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .logo{
+    font-size:28px;
+    letter-spacing:2px;
+  }
+
+  .navbar ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+  }
+
+  .navbar a{
+    font-size:15px;
+  }
+
+  /* HERO */
+
+  .hero{
+    padding:170px 20px 80px;
+  }
+
+  .profile{
+    width:160px;
+    height:160px;
+    border-width:4px;
+  }
+
+  .hero h1{
+    font-size:52px;
+    line-height:1.1;
+    margin-top:30px;
+  }
+
+  .typing{
+    font-size:22px;
+    margin-top:15px;
+  }
+
+  .hero p{
+    font-size:15px;
+    line-height:1.8;
+    margin-top:20px;
+    padding:0 5px;
+  }
+
+  .outline-btn{
+    padding:14px 28px;
+    font-size:15px;
+    border-radius:14px;
+  }
+
+  /* SECTION */
+
+  section{
+    padding:80px 5%;
+  }
+
+  .title{
+    margin-bottom:40px;
+  }
+
+  .title h1{
+    font-size:38px;
+  }
+
+  /* ABOUT */
+
+  .about-container{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:28px;
+    border-radius:24px;
+  }
+
+  .card h2{
+    font-size:24px;
+  }
+
+  .card p{
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  /* SKILL */
+
+  .skill-top span{
+    font-size:14px;
+  }
+
+  .bar{
+    height:12px;
+  }
+
+  /* ACHIEVEMENT */
+
+  .achievement-container{
+    grid-template-columns:1fr;
+  }
+
+  .achievement-card{
+    padding:30px;
+    border-radius:24px;
+  }
+
+  .achievement-card h1{
+    font-size:52px;
+  }
+
+  /* PROJECT */
+
+  .picture-container{
+    grid-template-columns:1fr;
+  }
+
+  .picture-card{
+    border-radius:24px;
+  }
+
+  .picture-card img{
+    height:220px;
+  }
+
+  .picture-content{
+    padding:24px;
+  }
+
+  .picture-content h2{
+    font-size:24px;
+  }
+
+  .picture-content p{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  /* GALLERY */
+
+  .gallery{
+    gap:20px;
+  }
+
+  .gallery-item{
+    width:100%;
+    height:220px;
+    border-radius:20px;
+  }
+
+  /* CONTACT */
+
+  .socials{
+    justify-content:center;
+  }
+
+  .socials a{
+    width:100%;
+    text-align:center;
+    padding:16px;
+    border-radius:16px;
+    font-size:15px;
+  }
+
+  /* FOOTER */
+
+  footer{
+    padding:30px 20px;
+    font-size:14px;
+  }
+
+}
+
 
 /* =========================
    EXTRA SMALL PHONE
@@ -566,8 +753,11 @@ footer{
 
 @media(max-width:500px){
 
+  /* NAVBAR */
+
   .navbar{
     padding:14px 5%;
+    gap:12px;
   }
 
   .logo{
@@ -582,8 +772,10 @@ footer{
     font-size:14px;
   }
 
+  /* HERO */
+
   .hero{
-    padding-top:210px;
+    padding:140px 20px 70px;
   }
 
   .profile{
@@ -593,6 +785,7 @@ footer{
 
   .hero h1{
     font-size:42px;
+    line-height:1.15;
   }
 
   .typing{
@@ -608,24 +801,59 @@ footer{
     max-width:280px;
   }
 
+  /* TITLE */
+
   .title h1{
     font-size:32px;
   }
+
+  /* CARD */
 
   .card{
     padding:22px;
   }
 
+  /* ACHIEVEMENT */
+
   .achievement-card h1{
     font-size:44px;
   }
 
+  /* PROJECT */
+
   .picture-card img{
     height:200px;
   }
-
-  .gallery-item{
-    height:190px;
+  
+    /* GALLERY */
+  
+  .gallery{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
   }
-
-}
+  
+  .gallery-item{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    border-radius:20px;
+    position:relative;
+    background:#111;
+  }
+  
+  .gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+  }
+  
+  .gallery-item:hover img{
+    transform:scale(1.05);
+    filter:brightness(.75);
+  }
+  
+  }
