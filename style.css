@@ -403,6 +403,17 @@ footer{
 
 @media(max-width:900px){
 
+  a{
+    -webkit-tap-highlight-color:transparent;
+    outline:none;
+  }
+
+  a:focus,
+  a:active{
+    outline:none;
+    box-shadow:none;
+  }
+
   .navbar{
     padding:15px 5%;
     flex-direction:column;
