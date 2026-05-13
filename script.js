@@ -18,17 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // =====================
-  // TYPING (OPTIMIZED)
+  // TYPING EFFECT (ANTI LOOP FIX)
   // =====================
   const text = ["Masih Gamon", "Math Lover", "Newbie", "Gamer"];
   const el = document.querySelector(".typing");
 
-  if (el) {
+  if (el && !el.dataset.init) {
+    el.dataset.init = "true"; // 🔥 anti double run lock
+
     let count = 0;
     let index = 0;
 
     function type() {
       const current = text[count];
+
       el.textContent = current.slice(0, ++index);
 
       if (index === current.length) {
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================
-  // BG BLOBS (OPTIMIZED SAFE)
+  // BG BLOBS (SAFE + CLEAN)
   // =====================
   const canvas = document.getElementById("bg-blobs");
 
@@ -60,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resize);
 
     const blobs = Array.from({ length: 3 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
       r: 80 + Math.random() * 120,
       dx: (Math.random() - 0.5) * 1.2,
       dy: (Math.random() - 0.5) * 1.2
@@ -71,7 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       blobs.forEach(b => {
-        const gradient = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
+        const gradient = ctx.createRadialGradient(
+          b.x, b.y, 0,
+          b.x, b.y, b.r
+        );
 
         gradient.addColorStop(0, "rgba(255,255,255,0.2)");
         gradient.addColorStop(1, "rgba(255,255,255,0)");
@@ -95,19 +101,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =====================
-  // SCROLL ANIMATION (FIXED)
+  // SCROLL REVEAL (CINEMATIC FIX)
   // =====================
+  const hiddenElements = document.querySelectorAll(".hidden");
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-        observer.unobserve(entry.target); // penting: stop observe setelah muncul
+
+        // 🔥 stop observe setelah muncul (lebih ringan)
+        observer.unobserve(entry.target);
       }
     });
   }, {
     threshold: 0.15
   });
 
-  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+  hiddenElements.forEach(el => observer.observe(el));
 
 });
