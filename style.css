@@ -373,6 +373,17 @@ footer{
 /* RESPONSIVE */
 
 @media(max-width:900px){
+  
+  a{
+   -webkit-tap-highlight-color:transparent;
+   outline:none;
+  }
+  
+  a:focus,
+  a:active{
+    outline:none;
+    box-shadow:none;
+  }
 
   .navbar{
     padding:15px 5%;
@@ -478,4 +489,21 @@ footer{
   inset: 0;
   z-index: -10;
   pointer-events: none;
+.picture-card:active{
+  transform:scale(.98);
+
+  border:1px solid rgba(255,255,255,.25);
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,.08);
+}
+
+  .picture-card:active img{
+    transform:scale(1.03);
+}
+
+.outline-btn:active{
+  background:white;
+  color:black;
+}
 }
