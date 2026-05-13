@@ -375,24 +375,42 @@ footer{
 @media(max-width:900px){
 
   .navbar{
+    padding:15px 5%;
     flex-direction:column;
-    gap:20px;
+    gap:12px;
+  }
+
+  .logo{
+    font-size:22px;
+    letter-spacing:2px;
   }
 
   .navbar ul{
+    gap:15px;
     flex-wrap:wrap;
     justify-content:center;
   }
 
+  .navbar a{
+    font-size:13px;
+  }
+
+  .hero{
+    padding-top:180px;
+  }
+
   .hero h1{
-    font-size:50px;
+    font-size:42px;
+  }
+
+  .profile{
+    width:150px;
+    height:150px;
   }
 
   .title h1{
-    font-size:40px;
+    font-size:34px;
   }
-
-}
 
 .gallery{
   width:100%;
