@@ -1,42 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   // =====================
-  // LOADER
-  // =====================
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-    if (loader) {
-      loader.style.opacity = "0";
-      setTimeout(() => loader.style.display = "none", 500);
-    }
-  });
-
-  // =====================
-  // TYPING EFFECT
-  // =====================
-  const text = ["Masih Gamon", "Math Lover", "Newbie", "Gamer"];
-  let count = 0;
-  let index = 0;
-
-  function type() {
-    const el = document.querySelector(".typing");
-    if (!el) return;
-
-    const current = text[count];
-    el.textContent = current.slice(0, ++index);
-
-    if (index === current.length) {
-      count = (count + 1) % text.length;
-      index = 0;
-      setTimeout(type, 1200);
-    } else {
-      setTimeout(type, 80);
-    }
-  }
-
-  type();
-
-  // =====================
   // LIGHTBOX
   // =====================
   window.openImage = (src) => {
@@ -54,13 +18,38 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // =====================
-  // BG BLOBS (SAFE INIT)
+  // TYPING (OPTIMIZED)
+  // =====================
+  const text = ["Masih Gamon", "Math Lover", "Newbie", "Gamer"];
+  const el = document.querySelector(".typing");
+
+  if (el) {
+    let count = 0;
+    let index = 0;
+
+    function type() {
+      const current = text[count];
+      el.textContent = current.slice(0, ++index);
+
+      if (index === current.length) {
+        count = (count + 1) % text.length;
+        index = 0;
+        setTimeout(type, 1200);
+      } else {
+        setTimeout(type, 80);
+      }
+    }
+
+    type();
+  }
+
+  // =====================
+  // BG BLOBS (OPTIMIZED SAFE)
   // =====================
   const canvas = document.getElementById("bg-blobs");
-  let ctx, blobs = [];
 
   if (canvas) {
-    ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d");
 
     function resize() {
       canvas.width = window.innerWidth;
@@ -70,15 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
     resize();
     window.addEventListener("resize", resize);
 
-    for (let i = 0; i < 3; i++) {
-      blobs.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: 80 + Math.random() * 120,
-        dx: (Math.random() - 0.5) * 1.2,
-        dy: (Math.random() - 0.5) * 1.2
-      });
-    }
+    const blobs = Array.from({ length: 3 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: 80 + Math.random() * 120,
+      dx: (Math.random() - 0.5) * 1.2,
+      dy: (Math.random() - 0.5) * 1.2
+    }));
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -110,18 +97,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // =====================
   // SCROLL ANIMATION (FIXED)
   // =====================
-  const hiddenElements = document.querySelectorAll(".hidden");
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
+        observer.unobserve(entry.target); // penting: stop observe setelah muncul
       }
     });
   }, {
     threshold: 0.15
   });
 
-  hiddenElements.forEach(el => observer.observe(el));
+  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
 });
